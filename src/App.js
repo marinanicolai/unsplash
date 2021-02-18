@@ -1,16 +1,15 @@
-import { useEffect, useState } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import Unsplash from "./Unsplash/Unsplash";
 
 function App() {
 
   return (
-    <>
-      <Unsplash />
-
-
-    </>
+    <Router>
+      <Route exact path="/">
+        <Unsplash />
+      </Route>
+    </Router>
   );
 
 }
