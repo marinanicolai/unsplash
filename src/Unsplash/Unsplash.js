@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import invariant from "invariant";
 import { FaSearch } from "react-icons/fa";
+import Photo from "../Photo/Photo";
 
 const clientID = `?client_id=${process.env.REACT_APP_ACCESS_KEY}`;
 const mainUrl = `https://api.unsplash.com/photos/`;
@@ -90,7 +91,7 @@ function Unsplash() {
                 <div className="photos-center">
                     {photos.map((photo) => {
                         // eslint-disable-next-line react/jsx-props-no-spreading
-                        return <img key={photo.id} {...photo} />;
+                        return <Photo key={photo.id} {...photo} />;
                     })}
                 </div>
                 {loading && <h2 className="loading">Loading...</h2>}
